@@ -1,4 +1,4 @@
 mkdir -p boost
 
 # edit path to boost folder if required
-bcp --boost=/usr/include filesystem preprocessor boost
+bcp --boost=/usr/include filesystem preprocessor type_traits utility operators boost
