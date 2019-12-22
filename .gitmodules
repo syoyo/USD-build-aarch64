@@ -7,3 +7,6 @@
 [submodule "OpenSubdiv-aarch64"]
 	path = OpenSubdiv-aarch64
 	url = https://github.com/syoyo/OpenSubdiv-aarch64
+[submodule "tbb-aarch64"]
+	path = tbb-aarch64
+	url = https://github.com/syoyo/tbb-aarch64
