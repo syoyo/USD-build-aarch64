@@ -1,0 +1,12 @@
+[submodule "USD-aarch64"]
+	path = USD-aarch64
+	url = https://github.com/syoyo/USD-aarch64
+[submodule "ptex-aarch64"]
+	path = ptex-aarch64
+	url = https://github.com/syoyo/ptex-aarch64
+[submodule "tbb"]
+	path = tbb
+	url = https://github.com/wjakob/tbb
+[submodule "OpenSubdiv-aarch64"]
+	path = OpenSubdiv-aarch64
+	url = https://github.com/syoyo/OpenSubdiv-aarch64
