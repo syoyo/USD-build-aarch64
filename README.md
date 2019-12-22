@@ -10,8 +10,8 @@ This build script is to build USD library for your aarch64 application, so build
 ## Supported platform
 
 * [ ] AARCH64 cross compile
-* [ ] AARCH64 native
-* [x] x64 native
+* [x] AARCH64 native
+* [x] x86-64 native
 
 ## Setup
 
@@ -19,7 +19,8 @@ This build script is to build USD library for your aarch64 application, so build
 $ git submodule update --init --recursive
 ```
 
-Not that boost header files are provided through `bcp` and not managed by git submodule.
+Not that boost header files are located `boost` and provided through `bcp` and not managed by git submodule.
+(git repo uses boost 1.72. boost 1.71 or less version may fail to build on aarch64(at least boost 1.65.1 will fail due to float128 related issue))
 
 ## Environment varialle.
 
