@@ -7,6 +7,12 @@ You can just submodule this repo to build USD.
 
 This build script is to build USD library for your aarch64 application, so building unit tests, some features(e.g. GPU build) and examples(e.g. usdview) are disabled.
 
+## Supported platform
+
+* [ ] AARCH64 cross compile
+* [ ] AARCH64 native
+* [x] x64 native
+
 ## Setup
 
 ```
@@ -34,7 +40,7 @@ $ cd build_tbb
 $ make && make install
 ```
 
-### Build OpenSubdiv
+### Build OpenSubdiv(optional)
 
 ```
 $ ./scripts/bootstrap-osd.sh
@@ -42,7 +48,7 @@ $ cd build_osd
 $ make && make install
 ```
 
-### Build PTex
+### Build PTex(optional)
 
 ```
 $ ./scripts/bootstrap-ptex.sh
@@ -52,32 +58,34 @@ $ make && make install
 
 ### Build USD
 
+T.B.W.
 
 ## Native build
 
 USD-build-aarch64 also privides native build(x64, aarch64).
 
-### Minimal build
+### all-in-one build
 
 ```
-$ ./scripts/bootstrap-native-mindep.sh
+$ ./scripts/all-build-native.sh
 ```
+
+### Minimal build
 
 Imaging, OpenSubdiv and PTex are disabled.
 
-### Minimal build
+Assume tbb is built.
 
 ```
 $ ./scripts/bootstrap-native-mindep.sh
+$ cd build
+$ make
 ```
-
-Imaging, OpenSubdiv and PTex are disabled.
-
 
 ## For developer
 
 Boost files are instaled using `bcp` program.
-If you want to upgrade boost to use, install `bcp` then run:
+If you want to upgrade boost, install `bcp` then run:
  
 ```
 $ ./scripts/setup-bcp-boost.sh
