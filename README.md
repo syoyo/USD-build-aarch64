@@ -9,7 +9,8 @@ This build script is to build USD library for your aarch64 application, so build
 
 ## Supported platform
 
-* [ ] AARCH64 cross compile
+* [x] AARCH64 cross compile
+  * [x] Android. Tested on NDK r20 + API level 28(Android 9)
 * [x] AARCH64 native
 * [x] x86-64 native
 
@@ -31,39 +32,7 @@ If you want to use diffent install location, set envrionemt varialle:
 
 Before running build scripts.
 
-## Procedure
-
-### Build and install TBB
-
-```
-$ ./scripts/bootstrap-tbb.sh
-$ cd build_tbb
-$ make && make install
-```
-
-### Build OpenSubdiv(optional)
-
-```
-$ ./scripts/bootstrap-osd.sh
-$ cd build_osd
-$ make && make install
-```
-
-### Build PTex(optional)
-
-```
-$ ./scripts/bootstrap-ptex.sh
-$ cd build_osd
-$ make && make install
-```
-
-### Build USD
-
-T.B.W.
-
-## Native build
-
-USD-build-aarch64 also privides native build(x64, aarch64).
+## Native build(x64 and aarch64)
 
 ### all-in-one build
 
@@ -75,13 +44,67 @@ $ ./scripts/all-build-native.sh
 
 Imaging, OpenSubdiv and PTex are disabled.
 
-Assume tbb is built.
 
+#### build tbb
+
+```
+$ ./scripts/bootstrap-tbb.sh
+$ cd build_tbb
+$ make && make install
+```
+
+#### build usd
+ 
 ```
 $ ./scripts/bootstrap-native-mindep.sh
 $ cd build
-$ make
+$ make && make install
 ```
+
+## Android cmake build
+
+In default, files will be installed `./android_dist`
+
+### tbb
+
+```
+$ ./scripts/android/bootstrap-tbb.sh
+$ build_ndk_tbb
+$ ninja && ninja install
+```
+
+### USD mindep build
+
+```
+$ ./scripts/android/bootstrap-usd-mindep.sh
+$ build_ndk_usd
+$ ninja && ninja install
+```
+
+### ptex
+
+```
+$ ./scripts/android/bootstrap-ptex.sh
+$ build_ndk_ptex
+$ ninja && ninja install
+```
+
+### OpenSubdiv
+
+```
+$ ./scripts/android/bootstrap-osd.sh
+$ build_ndk_osd
+$ ninja && ninja install
+```
+
+### USD(OSD + Ptex)
+
+```
+$ ./scripts/android/bootstrap-usd.sh
+$ build_ndk_usd
+$ ninja && ninja install
+```
+
 
 ## For developer
 
@@ -96,8 +119,10 @@ files will be installed to `boost` folder.
 
 ## TODO
 
-* [ ] Android build
-* [ ] iOS build
+* [ ] Android 
+  * [ ] OpenSuibdiv GPU(GLES) build
+* [ ] iOS 
+  * [ ] OpenSuibdiv GPU(GLES) build
 
 ## License
 

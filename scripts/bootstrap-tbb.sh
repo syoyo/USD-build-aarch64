@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rmdir build_tbb
+rm -rf build_tbb
 mkdir build_tbb
 
 curdir=`pwd`
@@ -15,5 +15,5 @@ cd build_tbb
 
 cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} \
   -DTBB_BUILD_TESTS=Off \
-  ../tbb
+  ../tbb-aarch64
 
