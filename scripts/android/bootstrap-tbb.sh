@@ -1,8 +1,9 @@
 #!/bin/bash
 
 ANDROID_SDK_ROOT=$HOME/Android/Sdk/
-ANDROID_NDK_ROOT=$HOME/Android/Sdk/ndk-bundle
-CMAKE_BIN=$ANDROID_SDK_ROOT/cmake/3.10.2.4988404/bin/cmake
+ANDROID_NDK_ROOT=$HOME/Android/Sdk/ndk/23.1.7779620/
+#CMAKE_BIN=$ANDROID_SDK_ROOT/cmake/3.10.2.4988404/bin/cmake
+CMAKE_BIN=$ANDROID_SDK_ROOT/cmake/3.18.1/bin/cmake
 
 rm -rf build_ndk_tbb
 mkdir build_ndk_tbb
@@ -17,10 +18,10 @@ fi
 
 cd build_ndk_tbb
 
-cmake -G Ninja -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} \
+${CMAKE_BIN} -G Ninja -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} \
   -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_ROOT/build/cmake/android.toolchain.cmake \
   -DANDROID_ABI=arm64-v8a \
-  -DANDROID_PLATFORM=28 \
+  -DANDROID_PLATFORM=29 \
   -DTBB_BUILD_TESTS=Off \
   ../tbb-aarch64
 
