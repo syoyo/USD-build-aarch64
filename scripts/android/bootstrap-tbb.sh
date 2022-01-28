@@ -21,7 +21,7 @@ cd build_ndk_tbb
 ${CMAKE_BIN} -G Ninja -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} \
   -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_ROOT/build/cmake/android.toolchain.cmake \
   -DANDROID_ABI=arm64-v8a \
-  -DANDROID_PLATFORM=28 \
+  -DANDROID_PLATFORM=29 \
   -DTBB_BUILD_TESTS=Off \
   ../tbb-aarch64
 
