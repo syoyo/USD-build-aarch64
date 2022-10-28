@@ -106,6 +106,12 @@ $ ninja && ninja install
 ```
 
 
+## Ubuntu with Python + USDView
+
+```
+$ sudo apt install libpyside-dev pyside-tools 
+```
+
 ## For developer
 
 Boost files are instaled using `bcp` program.
