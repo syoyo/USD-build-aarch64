@@ -1,6 +1,6 @@
 # USD build script for aarch64
 
-Status: W.I.P.
+Status: Synced to USD v22.11.
 
 This script build USD(Universal Scene Description) libray for aarch64(and also x64) with self-contained manner.
 You can just submodule this repo to build USD.
